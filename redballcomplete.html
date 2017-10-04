@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <script type = 'text/javascript' src='https://storage.googleapis.com/ics-redball/redball.js'></script>
+       
+        <script type = 'text/javascript'>
+    
+    
+        /*Pop Up Box Says Hello*/
+        
+        function sayhelloworld(){
+    
+            alert ('hello world from in a function');
+    
+        }
+    
+       /*Ball moves up*/
+       
+        function moveup(){
+    
+            redball.top = redball.top -10;
+    
+        }
+        /*Ball moves down*/
+            function movedown(){
+    
+            redball.top = redball.top +10;
+    
+        }
+        /*Ball moves left*/
+        function moveleft(){
+    
+            redball.left = redball.left -10;
+    
+        }
+        /*Ball moves right*/
+        function moveright(){
+    
+            redball.left = redball.left +10;
+    
+        }
+        
+        /*Ball moves upleft*/
+        function moveupleft(){
+            for(i=0; i<10;i++){
+                redball.top = redball.top -1;
+                redball.left = redball.left -1;
+            }
+        }
+    
+        /*Ball moves upright*/
+        function moveupright(){
+            for(i=0; i<10;i++){
+            redball.top = redball.top -1;
+            redball.left = redball.left +1;
+            }
+        }
+        /*Ball moves downleft*/
+        function movedownleft(){
+            for(i=0; i<10;i++){
+            redball.top = redball.top +1;
+            redball.left = redball.left -1;
+            }
+        }
+        /*Ball moves downright*/
+        function movedownright(){
+            for(i=0; i<10;i++){
+            redball.top = redball.top +1;
+            redball.left = redball.left +1;
+            }
+        }
+        /*Ball moves square*/
+        function square(){
+            for(i=0; i<10; i++){
+                movedown();
+            }
+            for(i=0; i<10; i++)
+                moveright();
+        
+            for(i=0; i<10; i++)
+                moveup();
+            for(i=0; i<10; i++)
+                moveleft();
+        }
+        /*Ball moves  in a octogon*/
+        function octogon(){
+            for(i=0; i<10; i++){
+                moveright();
+            }
+            for(i=0; i<10; i++)
+                movedownright();
+        
+            for(i=0; i<10; i++)
+                movedown();
+           
+            for(i=0; i<10; i++)
+                movedownleft();
+            
+            for(i=0; i<10; i++)
+                moveleft();
+    
+            for(i=0; i<10; i++)
+                moveupleft();
+            
+            for(i=0; i<10; i++)
+                moveup();
+    
+            for(i=0; i<10; i++)
+                moveupright();
+    
+        }
+        /*Ball moves in a Triangle*/
+        function triangle(){
+            for(i=0; i<10; i++){
+                moveupright();
+            }
+            for(i=0; i<10; i++)
+                movedownright();
+        
+            for(i=0; i<2; i++)
+                moveleft();
+        
+        }
+       
+    </script>
+    </head>
+    
+    <body>
+    
+        <button onclick="sayhelloworld();">Hello</button>
+        
+        <button onclick="moveup()")>Move Up</button>
+        
+        <button onclick="movedown()")>Move Down</button>
+        
+        <button onclick="moveleft()")>Move Left</button>
+        
+        <button onclick="moveright()")>Move Right</button>
+        
+        <button onclick="moveupleft()")>Move UpLeft</button>
+        
+        <button onclick="moveupright()")>Move UpRight</button>
+            
+        <button onclick="movedownleft()")>Move DownLeft</button>
+        
+        <button onclick="movedownright()")>Move DownRight</button>
+        
+        <button onclick="square()")> Move in a Square</button>
+    
+        <button onclick="triangle()")>Move in a Triangle</button>
+        
+        <button onclick="octogon()")>Move in a Octogon</button>
+    
+        <button onclick="endleft()")>End Left side</button>
+    
+        <button onclick="endright()")>End Right side</button>
+        
+        <button onclick="circle()")>Move in a Circle</button>
+                    
+        <img id='redball' src='http://www.icstars.org/files/redball.jpg'/>
+    
+    </body>
+    
+    </html>
